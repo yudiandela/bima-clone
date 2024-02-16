@@ -32,6 +32,56 @@
                     <small>Usulan Penelitian :</small> <br />
                     Analisis Kinerja Content Delivery Network Menggunakan Metode Rateless...
                 </div>
+
+                <ol class="flex items-center w-full px-16 mt-4">
+                    <li class="flex w-full items-center text-blue-600 before:content-[''] before:w-full before:h-1 before:border-b before:border-blue-800 before:border-4 before:inline-block after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-8 h-8 bg-blue-800 rounded-full shrink-0">
+                            <svg class="w-3.5 h-3.5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                            <div class="absolute text-sm text-center text-black mt-28">
+                                <div class="text-blue-800">Tahapan Seleksi/Usulan</div>
+                                -
+                            </div>
+                        </span>
+                    </li>
+
+                    <li class="flex w-full items-center text-blue-600 before:content-[''] before:w-full before:h-1 before:border-b before:border-gray-200 before:border-4 before:inline-block after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full shrink-0">
+                            <svg class="w-3.5 h-3.5 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                            <div class="absolute text-sm text-center text-gray-300 mt-28">
+                                <div class="text-gray-300">Tahapan Pelaksanaan Kegiatan</div>
+                                -
+                            </div>
+                        </span>
+                    </li>
+
+                    <li class="flex w-full items-center text-blue-600 before:content-[''] before:w-full before:h-1 before:border-b before:border-gray-200 before:border-4 before:inline-block after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full shrink-0">
+                            <svg class="w-3.5 h-3.5 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                            <div class="absolute text-sm text-center text-gray-300 mt-28">
+                                <div class="text-gray-300">Tahapan Seleksi Lanjutan</div>
+                                -
+                            </div>
+                        </span>
+                    </li>
+
+                    <li class="flex w-full items-center text-blue-600 before:content-[''] before:w-full before:h-1 before:border-b before:border-gray-200 before:border-4 before:inline-block after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full shrink-0">
+                            <svg class="w-3.5 h-3.5 text-gray-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                            <div class="absolute text-sm text-center text-gray-300 mt-28">
+                                <div class="text-gray-300">Tahapan Pasca Pelaksanaan Kegiatan</div>
+                                -
+                            </div>
+                        </span>
+                    </li>
+                </ol>
             </div>
 
             <h4 class="mt-8 mb-2 text-blue-800 text-md">PROFIL ANDA</h4>
