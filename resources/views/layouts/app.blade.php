@@ -134,6 +134,12 @@
         <main>
             {{ $slot }}
         </main>
+
+        <footer class="bg-gray-200">
+            <div class="p-4 mx-auto leading-tight text-md max-w-7xl sm:px-6 lg:px-8">
+                {{ now()->format('Y') }} © Kemdikbudristek clone.
+            </div>
+        </footer>
     </div>
 </body>
 
