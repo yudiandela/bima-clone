@@ -19,11 +19,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 
     Route::prefix('penelitian')->group(function () {
-        Route::view('usulan-baru', 'penelitian')->name('penelitian.usulan-baru');
-        Route::view('perbaikan-usulan', 'penelitian')->name('penelitian.perbaikan-usulan');
-        Route::view('laporan-kemajuan', 'penelitian')->name('penelitian.laporan-kemajuan');
-        Route::view('laporan-akhir', 'penelitian')->name('penelitian.laporan-akhir');
-        Route::view('catatan-harian', 'penelitian')->name('penelitian.catatan-harian');
+        Route::view('usulan-baru', 'penelitian.usulan-baru')->name('penelitian.usulan-baru');
+        Route::view('perbaikan-usulan', 'penelitian.perbaikan-usulan')->name('penelitian.perbaikan-usulan');
+        Route::view('laporan-kemajuan', 'penelitian.laporan-kemajuan')->name('penelitian.laporan-kemajuan');
+        Route::view('laporan-akhir', 'penelitian.laporan-akhir')->name('penelitian.laporan-akhir');
+        Route::view('catatan-harian', 'penelitian.catatan-harian')->name('penelitian.catatan-harian');
+
+        Route::view('{id}', 'penelitian.edit')->name('penelitian.edit');
     });
 
     Route::view('profile', 'profile')->name('profile');
