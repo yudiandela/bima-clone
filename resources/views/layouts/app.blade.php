@@ -24,9 +24,9 @@
         <header class="bg-blue-900 shadow">
             <div class="p-4 mx-auto leading-tight text-md max-w-7xl sm:px-6 lg:px-8">
                 <!-- Navigation Links -->
-                <div class="hidden space-x-12 sm:-my-px sm:flex">
+                <div class="hidden space-x-12 sm:-my-px sm:flex ">
                     <!-- Dashboard -->
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link class="text-white" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
@@ -45,13 +45,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
 
-                        <div class="absolute top-0 left-0 hidden w-48 h-auto group-hover:block hover:block">
+                        <div class="absolute top-0 left-0 z-10 hidden w-48 h-auto group-hover:block hover:block">
                             <div class="overflow-hidden translate-y-10 bg-white rounded shadow-lg">
-                                <x-nav-link wire:navigate :href="route('penelitian.usulan-baru')" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.perbaikan-usulan')" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.laporan-kemajuan')" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.laporan-akhir')" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.catatan-harian')" class="block px-3 py-3 text-gray-400 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.usulan-baru')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.perbaikan-usulan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.laporan-kemajuan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.laporan-akhir')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.catatan-harian')" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -68,13 +68,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
 
-                        <div class="absolute top-0 left-0 hidden w-48 h-auto group-hover:block hover:block">
+                        <div class="absolute top-0 left-0 z-10 hidden w-48 h-auto group-hover:block hover:block">
                             <div class="overflow-hidden translate-y-10 bg-white rounded shadow-lg">
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -91,15 +91,15 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
 
-                        <div class="absolute top-0 left-0 hidden w-48 h-auto group-hover:block hover:block">
+                        <div class="absolute top-0 left-0 z-10 hidden w-48 h-auto group-hover:block hover:block">
                             <div class="overflow-hidden translate-y-10 bg-white rounded shadow-lg">
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Pendaftaran Pendamping</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Pendaftaran Pelaksana</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Kolaborasi</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Pendaftaran Pendamping</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Pendaftaran Pelaksana</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Kolaborasi</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
                             </div>
                         </div>
                     </div>
@@ -116,13 +116,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
 
-                        <div class="absolute top-0 left-0 hidden w-48 h-auto group-hover:block hover:block">
+                        <div class="absolute top-0 left-0 z-10 hidden w-48 h-auto group-hover:block hover:block">
                             <div class="overflow-hidden translate-y-10 bg-white rounded shadow-lg">
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Prototipe</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
-                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-400 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Prototipe</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
+                                <x-nav-link wire:navigate href="#" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
                             </div>
                         </div>
                     </div>

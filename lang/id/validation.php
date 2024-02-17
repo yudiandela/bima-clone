@@ -33,7 +33,7 @@ return [
     'boolean' => ':attribute harus bernilai true atau false',
     'can' => 'The :attribute field contains an unauthorized value.',
     'confirmed' => 'Konfirmasi :attribute tidak cocok.',
-    'current_password' => 'The password is incorrect.',
+    'current_password' => 'Password yang di masukkan salah.',
     'date' => ':attribute bukan tanggal yang valid.',
     'date_equals' => ':attribute harus berisi tanggal yang sama dengan :date.',
     'date_format' => ':attribute tidak cocok dengan format :format.',
