@@ -19,4 +19,15 @@ class Tahapan
             default => '',
         };
     }
+
+    public static function step(string $status): int
+    {
+        return match ($status) {
+            'seleksi' => 1,
+            'pelaksanaan' => 2,
+            'seleksi-lanjutan' => 3,
+            'pasca-pelaksanaan' => 4,
+            default => 0,
+        };
+    }
 }

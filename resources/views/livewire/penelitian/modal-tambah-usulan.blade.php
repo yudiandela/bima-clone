@@ -2,6 +2,7 @@
 
 use App\Models\Usulan;
 use Livewire\Volt\Component;
+use Illuminate\Support\Facades\Auth;
 
 use function Livewire\Volt\{state, rules};
 
@@ -16,7 +17,7 @@ rules([
 ]);
 
 $submitUsulan = function() {
-    $validated = $this->validate();
+    $validated = collect($this->validate())->merge(['pengaju' => Auth::id()])->toArray();
 
     Usulan::create($validated);
 
