@@ -17,16 +17,19 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Administrator',
             'email' => 'admin@mail.com',
+            'role' => 'admin',
         ]);
 
         \App\Models\User::factory()->create([
             'name' => 'Assessor',
             'email' => 'assessor@mail.com',
+            'role' => 'assessor',
         ]);
 
         \App\Models\User::factory()->create([
             'name' => 'User',
             'email' => 'user@mail.com',
+            'role' => 'pengaju',
         ]);
     }
 }

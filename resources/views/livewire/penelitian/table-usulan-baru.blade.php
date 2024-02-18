@@ -21,17 +21,32 @@ rules([
     'status' => ['string'],
 ]);
 
-/** Fetching data **/
-$fetchUsulan = fn ($search = '') => Usulan::where(['status' => $this->status, 'type' => 'penelitian'])
-    ->when($search, function($query) use ($search) {
-        $query->where('ketua', 'like', "%$search%")
-            ->orWhere('judul', 'like', "%$search%")
-            ->orWhere('bidang_fokus', 'like', "%$search%")
-            ->orWhere('tahun_pelaksanaan', 'like', "%$search%")
-            ->orWhere('peran', 'like', "%$search%");
-    })
-    ->orderBy('id', 'DESC')
-    ->paginate(10);
+
+if ( Auth::user()->role == 'pengaju') {
+    /** Fetching data **/
+    $fetchUsulan = fn ($search = '') => Usulan::where(['pengaju' => Auth::id(), 'status' => $this->status, 'type' => 'penelitian'])
+        ->when($search, function($query) use ($search) {
+            $query->where('ketua', 'like', "%$search%")
+                ->orWhere('judul', 'like', "%$search%")
+                ->orWhere('bidang_fokus', 'like', "%$search%")
+                ->orWhere('tahun_pelaksanaan', 'like', "%$search%")
+                ->orWhere('peran', 'like', "%$search%");
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(10);
+} else {
+    /** Fetching data **/
+    $fetchUsulan = fn ($search = '') => Usulan::where(['status' => $this->status, 'type' => 'penelitian'])
+        ->when($search, function($query) use ($search) {
+            $query->where('ketua', 'like', "%$search%")
+                ->orWhere('judul', 'like', "%$search%")
+                ->orWhere('bidang_fokus', 'like', "%$search%")
+                ->orWhere('tahun_pelaksanaan', 'like', "%$search%")
+                ->orWhere('peran', 'like', "%$search%");
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(10);
+}
 
 with(fn () => [
     'usulan' => $this->fetchUsulan()
@@ -176,6 +191,7 @@ $submitUsulan = function() {
                 <x-input-error :messages="$errors->get('peran')" class="mt-2" />
             </div>
 
+            @if (Auth::user()->role == 'admin' || Auth::user()->role == 'assessor')
             <div class="mt-6">
                 <x-input-label for="status" value="{{ __('Status') }}" />
                 <select wire:model="status" id="status" name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
@@ -187,6 +203,7 @@ $submitUsulan = function() {
                 </select>
                 <x-input-error :messages="$errors->get('status')" class="mt-2" />
             </div>
+            @endif
 
             <div class="flex items-center justify-end mt-6">
                 <x-action-message class="text-green-600 me-3" on="usulan-updated">{{ __('Usulan berhasil diupdate.') }}</x-action-message>

@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 use function Livewire\Volt\{state};
 
-$usulan = Usulan::where('pengaju', Auth::id())->orderBy('id', 'DESC')->first();
+if ( Auth::user()->role == 'pengaju') {
+    $usulan = Usulan::where('pengaju', Auth::id())->orderBy('id', 'DESC')->first();
+} else {
+    $usulan = Usulan::orderBy('id', 'DESC')->first();
+}
 
 state([
     'usulan' => $usulan,
