@@ -31,6 +31,9 @@ class Usulan extends Model
         'tahun_pelaksanaan',
         'peran',
         'status',
+        'tanggal_pelaksanaan',
+        'tanggal_seleksi_lanjutan',
+        'tanggal_pasca_pelaksanaan',
         'type',
     ];
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PenelitianController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 
     Route::prefix('penelitian')->group(function () {
-        Route::view('usulan-baru', 'penelitian.usulan-baru')->name('penelitian.usulan-baru');
-        Route::view('perbaikan-usulan', 'penelitian.perbaikan-usulan')->name('penelitian.perbaikan-usulan');
-        Route::view('laporan-kemajuan', 'penelitian.laporan-kemajuan')->name('penelitian.laporan-kemajuan');
-        Route::view('laporan-akhir', 'penelitian.laporan-akhir')->name('penelitian.laporan-akhir');
-        Route::view('catatan-harian', 'penelitian.catatan-harian')->name('penelitian.catatan-harian');
-
-        Route::view('{id}', 'penelitian.edit')->name('penelitian.edit');
+        Route::get('{status}', PenelitianController::class)->name('penelitian.status');
     });
 
     Route::view('profile', 'profile')->name('profile');

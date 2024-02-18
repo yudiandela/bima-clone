@@ -47,11 +47,11 @@
 
                         <div class="absolute top-0 left-0 z-10 hidden w-48 h-auto group-hover:block hover:block">
                             <div class="overflow-hidden translate-y-10 bg-white rounded shadow-lg">
-                                <x-nav-link wire:navigate :href="route('penelitian.usulan-baru')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.perbaikan-usulan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.laporan-kemajuan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.laporan-akhir')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
-                                <x-nav-link wire:navigate :href="route('penelitian.catatan-harian')" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.status', 'seleksi')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Usulan Baru</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.status', 'perbaikan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Perbaikan Usulan</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.status', 'pelaksanaan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Kemajuan</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.status', 'seleksi-lanjutan')" class="block px-3 py-3 text-gray-600 border-b hover:text-blue-800 hover:bg-gray-100">Laporan Akhir</x-nav-link>
+                                <x-nav-link wire:navigate :href="route('penelitian.status', 'pasca-pelaksanaan')" class="block px-3 py-3 text-gray-600 hover:text-blue-800 hover:bg-gray-100">Catatan Harian</x-nav-link>
                             </div>
                         </div>
                     </div>

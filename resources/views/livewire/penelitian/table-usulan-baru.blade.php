@@ -1,17 +1,16 @@
 <?php
 
-use Livewire\Volt\Component;
 use App\Models\Usulan;
-use Illuminate\Database\Eloquent\Collection;
 use App\Helper\Tahapan;
+use Livewire\Volt\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 use function Livewire\Volt\{state, rules, on, computed, with, usesPagination};
 
 usesPagination();
 
 state(['search'])->url();
-state(['selected' => 0]);
-state(['ketua', 'judul', 'bidang_fokus', 'tahun_pelaksanaan', 'peran', 'type', 'status']);
+state(['selected', 'ketua', 'judul', 'bidang_fokus', 'tahun_pelaksanaan', 'peran', 'type', 'status']);
 
 rules([
     'ketua' => ['string'],
@@ -23,7 +22,7 @@ rules([
 ]);
 
 /** Fetching data **/
-$fetchUsulan = fn ($search = '') => Usulan::where(['status' => 'seleksi', 'type' => 'penelitian'])
+$fetchUsulan = fn ($search = '') => Usulan::where(['status' => $this->status, 'type' => 'penelitian'])
     ->when($search, function($query) use ($search) {
         $query->where('ketua', 'like', "%$search%")
             ->orWhere('judul', 'like', "%$search%")
@@ -62,6 +61,24 @@ $submitUsulan = function() {
     $validated = $this->validate();
 
     $this->selected->update($validated);
+
+    if($this->status == 'pelaksanaan') {
+        $this->selected->update([
+            'tanggal_pelaksanaan' => now()
+        ]);
+    }
+
+    if($this->status == 'seleksi-lanjutan') {
+        $this->selected->update([
+            'tanggal_seleksi_lanjutan' => now()
+        ]);
+    }
+
+    if($this->status == 'pasca-pelaksanaan') {
+        $this->selected->update([
+            'tanggal_pasca_pelaksanaan' => now()
+        ]);
+    }
 
     $this->dispatch('usulan-updated');
 };

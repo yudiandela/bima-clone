@@ -13,6 +13,7 @@ class Tahapan
     {
         return match ($status) {
             'seleksi' => 'Tahapan Seleksi/Usulan',
+            'perbaikan' => 'Perbaikan',
             'pelaksanaan' => 'Tahapan Pelaksanaan Kegiatan',
             'seleksi-lanjutan' => 'Tahapan Seleksi Lanjutan',
             'pasca-pelaksanaan' => 'Tahapan Pasca Pelaksanaan Kegiatan',
@@ -24,6 +25,7 @@ class Tahapan
     {
         return match ($status) {
             'seleksi' => 1,
+            'perbaikan' => 1,
             'pelaksanaan' => 2,
             'seleksi-lanjutan' => 3,
             'pasca-pelaksanaan' => 4,
