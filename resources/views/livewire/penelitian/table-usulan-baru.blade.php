@@ -11,7 +11,7 @@ usesPagination();
 
 state(['search'])->url();
 state(['selected' => 0]);
-state(['ketua', 'judul', 'bidang_fokus', 'tahun_pelaksanaan', 'peran', 'type']);
+state(['ketua', 'judul', 'bidang_fokus', 'tahun_pelaksanaan', 'peran', 'type', 'status']);
 
 rules([
     'ketua' => ['string'],
@@ -19,6 +19,7 @@ rules([
     'bidang_fokus' => ['string'],
     'tahun_pelaksanaan' => ['numeric'],
     'peran' => ['string'],
+    'status' => ['string'],
 ]);
 
 /** Fetching data **/
@@ -54,14 +55,13 @@ $fetchDetailUsulan = function(int $id) {
     $this->tahun_pelaksanaan = $detail->tahun_pelaksanaan;
     $this->peran = $detail->peran;
     $this->type = $detail->type;
+    $this->status = $detail->status;
 };
 
 $submitUsulan = function() {
     $validated = $this->validate();
 
     $this->selected->update($validated);
-
-    $this->reset('ketua', 'judul', 'bidang_fokus', 'tahun_pelaksanaan', 'peran');
 
     $this->dispatch('usulan-updated');
 };
@@ -106,7 +106,9 @@ $submitUsulan = function() {
                 <td class="text-center">
                     <button wire:click="fetchDetailUsulan({{ $data->id }})" class="text-blue-600"
                         x-on:click.prevent="$dispatch('open-modal', 'edit-usulan')">
-                        Edit
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                        </svg>
                     </button>
                 </td>
             </tr>
@@ -155,6 +157,18 @@ $submitUsulan = function() {
                 <x-input-label for="peran" value="{{ __('Peran') }}" />
                 <x-text-input wire:model="peran" id="peran" name="peran" type="text" class="block w-full mt-1" placeholder="{{ __('Peran') }}"/>
                 <x-input-error :messages="$errors->get('peran')" class="mt-2" />
+            </div>
+
+            <div class="mt-6">
+                <x-input-label for="status" value="{{ __('Status') }}" />
+                <select wire:model="status" id="status" name="status" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    <option value="">-- Pilih Status --</option>
+                    <option value="perbaikan">Perbaikan</option>
+                    <option value="pelaksanaan">Pelaksanaan</option>
+                    <option value="seleksi-lanjutan">Seleksi Lanjutan</option>
+                    <option value="pasca-pelaksanaan">Pasca Pelaksanaan</option>
+                </select>
+                <x-input-error :messages="$errors->get('status')" class="mt-2" />
             </div>
 
             <div class="flex items-center justify-end mt-6">
