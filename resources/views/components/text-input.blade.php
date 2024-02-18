@@ -1,7 +1,7 @@
 @props(['disabled' => false])
 
 <div x-data="{ password: {{ $attributes['type'] == 'password' ? 'true' : 'false' }} }" class="relative w-full">
-    <input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ' . ($attributes['name'] == 'search' ? '!ps-10' : '')]) !!} :type="password ? 'password' : '{{ $attributes['type'] == 'password' ? 'text' : $attributes['type'] }}'" autocomplete="off">
+    <input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ' . ($attributes['name'] == 'search' ? '!ps-10' : '')]) !!} @if($attributes['type'] == 'password') :type="password ? 'password' : 'text'" @endif autocomplete="off">
 
     {{-- Eye Icon --}}
     <svg x-show="{{ $attributes['type'] == 'password' ? 'true' : 'false' }}" @click="password = !password" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute w-6 h-6 top-[50%] right-2 -translate-y-1/2 cursor-pointer text-gray-400">
