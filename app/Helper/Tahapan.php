@@ -9,7 +9,7 @@ class Tahapan
         //
     }
 
-    public static function get(string $status): string
+    public static function get(?string $status): string
     {
         return match ($status) {
             'seleksi' => 'Tahapan Seleksi/Usulan',
@@ -20,7 +20,7 @@ class Tahapan
         };
     }
 
-    public static function step(string $status): int
+    public static function step(?string $status): int
     {
         return match ($status) {
             'seleksi' => 1,

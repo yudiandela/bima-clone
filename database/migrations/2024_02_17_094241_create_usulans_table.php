@@ -13,15 +13,21 @@ return new class extends Migration
     {
         Schema::create('usulan', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('pengaju');
             $table->string('ketua');
             $table->string('judul');
             $table->string('bidang_fokus');
             $table->integer('tahun_pelaksanaan')->unsigned();
             $table->string('peran');
-            $table->enum('status', ['seleksi', 'pelaksanaan', 'seleksi-lanjutan', 'pasca-pelaksanaan']);
+            $table->enum('status', ['seleksi', 'perbaikan', 'pelaksanaan', 'seleksi-lanjutan', 'pasca-pelaksanaan']);
+            $table->timestamp('tanggal_pelaksanaan')->nullable();
+            $table->timestamp('tanggal_seleksi_lanjutan')->nullable();
+            $table->timestamp('tanggal_pasca_pelaksanaan')->nullable();
             $table->enum('type', ['penelitian', 'pengabdian', 'kosabangsa', 'prototipe']);
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('pengaju')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
